@@ -395,11 +395,11 @@ private class LazyTrigger<T> extends FutureTrigger<T> {
   var op:Callback<T->Void>;
 
   public function new(op) {
+    super();
     #if debug
       if (op == null) throw 'invalid argument';
     #end
     this.op = op;
-    super();
   }
 
   override public function eager() {
